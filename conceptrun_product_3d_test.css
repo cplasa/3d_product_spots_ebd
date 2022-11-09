@@ -1,0 +1,4095 @@
+/* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */ #tridiv {
+  perspective: 800px;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+  font-size: 400%;
+}
+.scene, .shape, .face, .face-wrapper, .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.scene {
+  width: 80em;
+  height: 80em;
+  top: 50%;
+  left: 50%;
+  margin: -40em 0 0 -40em;
+}
+.shape {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 50%;
+}
+.face, .face-wrapper {
+  overflow: hidden;
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+  /* hidden by default, prevent blinking and other weird rendering glitchs */
+}
+.face {
+  background-size: 100% 100%!important;
+  background-position: center;
+}
+.face-wrapper .face {
+  left: 100%;
+  width: 100%;
+  height: 100%
+}
+.photon-shader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.side {
+  left: 50%;
+}
+.cr, .cr .side {
+  height: 100%;
+}
+[class*="cuboid"] .ft, [class*="cuboid"] .bk {
+  width: 100%;
+  height: 100%;
+}
+[class*="cuboid"] .bk {
+  left: 100%;
+}
+[class*="cuboid"] .rt {
+  transform: rotateY(-90deg) translateX(-50%);
+}
+[class*="cuboid"] .lt {
+  transform: rotateY(90deg) translateX(-50%);
+}
+[class*="cuboid"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cuboid"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cuboid"] .lt {
+  left: 100%;
+}
+[class*="cuboid"] .bm {
+  top: 100%;
+}
+[class*="cylinder"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cylinder"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cylinder"] .tp, [class*="cylinder"] .bm, [class*="cylinder"] .tp .photon-shader, [class*="cylinder"] .bm .photon-shader {
+  border-radius: 50%;
+}
+[class*="cylinder"] .bm {
+  top: 100%;
+}
+/* .cub-1 styles */
+.cub-1 {
+  transform:translate3D(0em, 0em, 0.4em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:9em;
+  height:9em;
+  margin:-4.5em 0 0 -4.5em;
+}
+.cub-1 .ft {
+  transform:translateZ(0.1em);
+}
+.cub-1 .bk {
+  transform:translateZ(-0.1em) rotateY(180deg);
+}
+.cub-1 .rt, .cub-1 .lt {
+  width:0.2em;
+  height:9em;
+}
+.cub-1 .tp, .cub-1 .bm {
+  width:9em;
+  height:0.2em;
+}
+.cub-1 .face {
+  background-color:#7e7e7e;
+}
+.cub-1 .ft {
+  background:url(https://www.conceptrun.de/EBS/90x90_geb_6_innen.png);
+}
+.cub-1 .bk {
+  background:url(https://www.conceptrun.de/EBS/90x90_geb_6_rueckseite.png) #3b3b3b;
+}
+.cub-1 .tp {
+  background:url(https://www.conceptrun.de/EBS/textur_gebuerstet_lq_d.png);
+}
+.cub-1 .bm {
+  background:url(https://www.conceptrun.de/EBS/textur_gebuerstet_lq_d.png);
+}
+.cub-1 .lt {
+  background:url(https://www.conceptrun.de/EBS/textur_gebuerstet_lq_d.png);
+}
+.cub-1 .rt {
+  background:url(https://www.conceptrun.de/EBS/textur_gebuerstet_lq_d.png);
+}
+.cub-1 .ft {
+  width:8.9em;
+  margin-left:0.05em;
+}
+.cub-1 .bk {
+  width:8.9em;
+  margin-left:-0.05em;
+}
+.cub-1 .rt, .cub-1 .lt {
+  width:0.1em;
+}
+.cub-1 .tp, .cub-1 .bm, .cub-1 .tp .photon-shader, .cub-1 .bm .photon-shader {
+  border-radius:0.05em;
+}
+.cub-1 .cr {
+  width:0.05em;
+  left:0.025em;
+}
+.cub-1 .cr-0 {
+  transform: translate3D(8.9em, 0, 0.05em);
+}
+.cub-1 .cr-1 {
+  transform: translate3D(8.9em, 0, -0.05em);
+}
+.cub-1 .cr-2 {
+  transform: translate3D(0, 0, -0.05em);
+}
+.cub-1 .cr-3 {
+  transform: translate3D(0, 0, 0.05em);
+}
+.cub-1 .cr-0 .s0 {
+  transform: rotateY(15deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .cr-0 .s1 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .cr-0 .s2 {
+  transform: rotateY(75deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .cr-1 .s0 {
+  transform: rotateY(105deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .cr-1 .s1 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .cr-1 .s2 {
+  transform: rotateY(165deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .cr-2 .s0 {
+  transform: rotateY(195deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .cr-2 .s1 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .cr-2 .s2 {
+  transform: rotateY(255deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .cr-3 .s0 {
+  transform: rotateY(285deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .cr-3 .s1 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .cr-3 .s2 {
+  transform: rotateY(345deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-1 .side {
+  width:0.051794919243112275em;
+}
+/* .cyl-2 styles */
+.cyl-2 {
+  transform:translate3D(0em, -0.11em, -0.10em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:5.65em;
+  height:2em;
+  margin:-1em 0 0 -2.825em;
+}
+.cyl-2 .tp, .cyl-2 .bm {
+  width:5.65em;
+  height:5.65em;
+}
+.cyl-2 .side {
+  width:0.22230234762837467em;
+  height:2em;
+}
+.cyl-2 .s0 {
+  transform: rotateY(2deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s1 {
+  transform: rotateY(6deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s2 {
+  transform: rotateY(10deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s3 {
+  transform: rotateY(14deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s4 {
+  transform: rotateY(18deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s5 {
+  transform: rotateY(22deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s6 {
+  transform: rotateY(26deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s7 {
+  transform: rotateY(30deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s8 {
+  transform: rotateY(34deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s9 {
+  transform: rotateY(38deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s10 {
+  transform: rotateY(42deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s11 {
+  transform: rotateY(46deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s12 {
+  transform: rotateY(50deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s13 {
+  transform: rotateY(54deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s14 {
+  transform: rotateY(58deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s15 {
+  transform: rotateY(62deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s16 {
+  transform: rotateY(66deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s17 {
+  transform: rotateY(70deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s18 {
+  transform: rotateY(74deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s19 {
+  transform: rotateY(78deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s20 {
+  transform: rotateY(82deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s21 {
+  transform: rotateY(86deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s22 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s23 {
+  transform: rotateY(94deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s24 {
+  transform: rotateY(98deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s25 {
+  transform: rotateY(102deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s26 {
+  transform: rotateY(106deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s27 {
+  transform: rotateY(110deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s28 {
+  transform: rotateY(114deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s29 {
+  transform: rotateY(118deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s30 {
+  transform: rotateY(122deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s31 {
+  transform: rotateY(126deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s32 {
+  transform: rotateY(130deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s33 {
+  transform: rotateY(134deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s34 {
+  transform: rotateY(138deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s35 {
+  transform: rotateY(142deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s36 {
+  transform: rotateY(146deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s37 {
+  transform: rotateY(150deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s38 {
+  transform: rotateY(154deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s39 {
+  transform: rotateY(158deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s40 {
+  transform: rotateY(162deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s41 {
+  transform: rotateY(166deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s42 {
+  transform: rotateY(170deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s43 {
+  transform: rotateY(174deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s44 {
+  transform: rotateY(178deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s45 {
+  transform: rotateY(182deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s46 {
+  transform: rotateY(186deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s47 {
+  transform: rotateY(190deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s48 {
+  transform: rotateY(194deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s49 {
+  transform: rotateY(198deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s50 {
+  transform: rotateY(202deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s51 {
+  transform: rotateY(206deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s52 {
+  transform: rotateY(210deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s53 {
+  transform: rotateY(214deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s54 {
+  transform: rotateY(218deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s55 {
+  transform: rotateY(222deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s56 {
+  transform: rotateY(226deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s57 {
+  transform: rotateY(230deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s58 {
+  transform: rotateY(234deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s59 {
+  transform: rotateY(238deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s60 {
+  transform: rotateY(242deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s61 {
+  transform: rotateY(246deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s62 {
+  transform: rotateY(250deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s63 {
+  transform: rotateY(254deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s64 {
+  transform: rotateY(258deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s65 {
+  transform: rotateY(262deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s66 {
+  transform: rotateY(266deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s67 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s68 {
+  transform: rotateY(274deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s69 {
+  transform: rotateY(278deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s70 {
+  transform: rotateY(282deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s71 {
+  transform: rotateY(286deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s72 {
+  transform: rotateY(290deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s73 {
+  transform: rotateY(294deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s74 {
+  transform: rotateY(298deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s75 {
+  transform: rotateY(302deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s76 {
+  transform: rotateY(306deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s77 {
+  transform: rotateY(310deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s78 {
+  transform: rotateY(314deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s79 {
+  transform: rotateY(318deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s80 {
+  transform: rotateY(322deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s81 {
+  transform: rotateY(326deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s82 {
+  transform: rotateY(330deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s83 {
+  transform: rotateY(334deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s84 {
+  transform: rotateY(338deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s85 {
+  transform: rotateY(342deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s86 {
+  transform: rotateY(346deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s87 {
+  transform: rotateY(350deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s88 {
+  transform: rotateY(354deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .s89 {
+  transform: rotateY(358deg) translate3D(-50%, 0, 2.8000000000000003em);
+}
+.cyl-2 .bm {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+.cyl-2 .side {
+  background:url(https://www.conceptrun.de/EBS/textur_schmal_gebuerstet_verlauf.png) #5c5c5c;
+}
+/* .cyl-3 styles */
+.cyl-3 {
+  transform:translate3D(0.02em, -0.22em, -0.7em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:4.8em;
+  height:2.5em;
+  margin:-1.25em 0 0 -2.4em;
+}
+.cyl-3 .tp, .cyl-3 .bm {
+  width:4.8em;
+  height:4.8em;
+}
+.cyl-3 .side {
+  width:0.36064869732885em;
+  height:2.5em;
+}
+.cyl-3 .s0 {
+  transform: rotateY(4deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s1 {
+  transform: rotateY(12deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s2 {
+  transform: rotateY(20deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s3 {
+  transform: rotateY(28deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s4 {
+  transform: rotateY(36deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s5 {
+  transform: rotateY(44deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s6 {
+  transform: rotateY(52deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s7 {
+  transform: rotateY(60deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s8 {
+  transform: rotateY(68deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s9 {
+  transform: rotateY(76deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s10 {
+  transform: rotateY(84deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s11 {
+  transform: rotateY(92deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s12 {
+  transform: rotateY(100deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s13 {
+  transform: rotateY(108deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s14 {
+  transform: rotateY(116deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s15 {
+  transform: rotateY(124deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s16 {
+  transform: rotateY(132deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s17 {
+  transform: rotateY(140deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s18 {
+  transform: rotateY(148deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s19 {
+  transform: rotateY(156deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s20 {
+  transform: rotateY(164deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s21 {
+  transform: rotateY(172deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s22 {
+  transform: rotateY(180deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s23 {
+  transform: rotateY(188deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s24 {
+  transform: rotateY(196deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s25 {
+  transform: rotateY(204deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s26 {
+  transform: rotateY(212deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s27 {
+  transform: rotateY(220deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s28 {
+  transform: rotateY(228deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s29 {
+  transform: rotateY(236deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s30 {
+  transform: rotateY(244deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s31 {
+  transform: rotateY(252deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s32 {
+  transform: rotateY(260deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s33 {
+  transform: rotateY(268deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s34 {
+  transform: rotateY(276deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s35 {
+  transform: rotateY(284deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s36 {
+  transform: rotateY(292deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s37 {
+  transform: rotateY(300deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s38 {
+  transform: rotateY(308deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s39 {
+  transform: rotateY(316deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s40 {
+  transform: rotateY(324deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s41 {
+  transform: rotateY(332deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s42 {
+  transform: rotateY(340deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s43 {
+  transform: rotateY(348deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .s44 {
+  transform: rotateY(356deg) translate3D(-50%, 0, 2.375em);
+}
+.cyl-3 .face, .cyl-3 .side {
+  background-color:#e8e8e8;
+}
+.cyl-3 .tp {
+  background-color:#d9d9d9;
+}
+.cyl-3 .bm {
+  background:url(https://www.conceptrun.de/EBS/lm_dimmbar_innen_l1.png) #e0e0e0;
+}
+.cyl-3 .side {
+  background-color:#c9c9c9;
+}
+/* .cyl-5 styles */
+.cyl-5 {
+  transform:translate3D(-3em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(90deg);
+  opacity:1;
+  width:0.5em;
+  height:.3em;
+  margin:-0.15em 0 0 -0.25em;
+}
+.cyl-5 .tp, .cyl-5 .bm {
+  width:0.5em;
+  height:0.5em;
+}
+.cyl-5 .side {
+  width:0.10419222016226815em;
+  height:.3em;
+}
+.cyl-5 .s0 {
+  transform: rotateY(9deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s1 {
+  transform: rotateY(27deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s2 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s3 {
+  transform: rotateY(63deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s4 {
+  transform: rotateY(81deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s5 {
+  transform: rotateY(99deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s6 {
+  transform: rotateY(117deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s7 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s8 {
+  transform: rotateY(153deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s9 {
+  transform: rotateY(171deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s10 {
+  transform: rotateY(189deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s11 {
+  transform: rotateY(207deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s12 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s13 {
+  transform: rotateY(243deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s14 {
+  transform: rotateY(261deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s15 {
+  transform: rotateY(279deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s16 {
+  transform: rotateY(297deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s17 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s18 {
+  transform: rotateY(333deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .s19 {
+  transform: rotateY(351deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-5 .face, .cyl-5 .side {
+  background:url(https://www.conceptrun.de/EBS/textur_gebuerstet_lq_d.png) #FFFFFF;
+}
+/* .cyl-1 styles */
+.cyl-1 {
+  transform:translate3D(-3em, 0em, -1.6em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-1 .tp, .cyl-1 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-1 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-1 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-1 .face, .cyl-1 .side {
+  background-color:#FFFFFF;
+}
+.cyl-1 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-1 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-1 .side {
+  background-color:#adadad;
+}
+/* .cyl-8 styles */
+.cyl-8 {
+  transform:translate3D(0em, 0em, -0.7em) rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:6em;
+  height:2.1em;
+  margin:-1.05em 0 0 -3em;
+}
+.cyl-8 .tp, .cyl-8 .bm {
+  width:6em;
+  height:6em;
+}
+.cyl-8 .side {
+  width:0.23452461695048638em;
+  height:2.1em;
+}
+.cyl-8 .s0 {
+  transform: rotateY(2deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s1 {
+  transform: rotateY(6deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s2 {
+  transform: rotateY(10deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s3 {
+  transform: rotateY(14deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s4 {
+  transform: rotateY(18deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s5 {
+  transform: rotateY(22deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s6 {
+  transform: rotateY(26deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s7 {
+  transform: rotateY(30deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s8 {
+  transform: rotateY(34deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s9 {
+  transform: rotateY(38deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s10 {
+  transform: rotateY(42deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s11 {
+  transform: rotateY(46deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s12 {
+  transform: rotateY(50deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s13 {
+  transform: rotateY(54deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s14 {
+  transform: rotateY(58deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s15 {
+  transform: rotateY(62deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s16 {
+  transform: rotateY(66deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s17 {
+  transform: rotateY(70deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s18 {
+  transform: rotateY(74deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s19 {
+  transform: rotateY(78deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s20 {
+  transform: rotateY(82deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s21 {
+  transform: rotateY(86deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s22 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s23 {
+  transform: rotateY(94deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s24 {
+  transform: rotateY(98deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s25 {
+  transform: rotateY(102deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s26 {
+  transform: rotateY(106deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s27 {
+  transform: rotateY(110deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s28 {
+  transform: rotateY(114deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s29 {
+  transform: rotateY(118deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s30 {
+  transform: rotateY(122deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s31 {
+  transform: rotateY(126deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s32 {
+  transform: rotateY(130deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s33 {
+  transform: rotateY(134deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s34 {
+  transform: rotateY(138deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s35 {
+  transform: rotateY(142deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s36 {
+  transform: rotateY(146deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s37 {
+  transform: rotateY(150deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s38 {
+  transform: rotateY(154deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s39 {
+  transform: rotateY(158deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s40 {
+  transform: rotateY(162deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s41 {
+  transform: rotateY(166deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s42 {
+  transform: rotateY(170deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s43 {
+  transform: rotateY(174deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s44 {
+  transform: rotateY(178deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s45 {
+  transform: rotateY(182deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s46 {
+  transform: rotateY(186deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s47 {
+  transform: rotateY(190deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s48 {
+  transform: rotateY(194deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s49 {
+  transform: rotateY(198deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s50 {
+  transform: rotateY(202deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s51 {
+  transform: rotateY(206deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s52 {
+  transform: rotateY(210deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s53 {
+  transform: rotateY(214deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s54 {
+  transform: rotateY(218deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s55 {
+  transform: rotateY(222deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s56 {
+  transform: rotateY(226deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s57 {
+  transform: rotateY(230deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s58 {
+  transform: rotateY(234deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s59 {
+  transform: rotateY(238deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s60 {
+  transform: rotateY(242deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s61 {
+  transform: rotateY(246deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s62 {
+  transform: rotateY(250deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s63 {
+  transform: rotateY(254deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s64 {
+  transform: rotateY(258deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s65 {
+  transform: rotateY(262deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s66 {
+  transform: rotateY(266deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s67 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s68 {
+  transform: rotateY(274deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s69 {
+  transform: rotateY(278deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s70 {
+  transform: rotateY(282deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s71 {
+  transform: rotateY(286deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s72 {
+  transform: rotateY(290deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s73 {
+  transform: rotateY(294deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s74 {
+  transform: rotateY(298deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s75 {
+  transform: rotateY(302deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s76 {
+  transform: rotateY(306deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s77 {
+  transform: rotateY(310deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s78 {
+  transform: rotateY(314deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s79 {
+  transform: rotateY(318deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s80 {
+  transform: rotateY(322deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s81 {
+  transform: rotateY(326deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s82 {
+  transform: rotateY(330deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s83 {
+  transform: rotateY(334deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s84 {
+  transform: rotateY(338deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s85 {
+  transform: rotateY(342deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s86 {
+  transform: rotateY(346deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s87 {
+  transform: rotateY(350deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s88 {
+  transform: rotateY(354deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .s89 {
+  transform: rotateY(358deg) translate3D(-50%, 0, 2.975em);
+}
+.cyl-8 .side {
+  background-color:#696969;
+}
+/* .cyl-9 styles */
+.cyl-9 {
+  transform:translate3D(0em, 0em, -0.7em) rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:6.2em;
+  height:2em;
+  margin:-1em 0 0 -3.1em;
+}
+.cyl-9 .tp, .cyl-9 .bm {
+  width:6.2em;
+  height:6.2em;
+}
+.cyl-9 .side {
+  width:0.24150877084883593em;
+  height:2em;
+}
+.cyl-9 .s0 {
+  transform: rotateY(2deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s1 {
+  transform: rotateY(6deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s2 {
+  transform: rotateY(10deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s3 {
+  transform: rotateY(14deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s4 {
+  transform: rotateY(18deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s5 {
+  transform: rotateY(22deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s6 {
+  transform: rotateY(26deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s7 {
+  transform: rotateY(30deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s8 {
+  transform: rotateY(34deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s9 {
+  transform: rotateY(38deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s10 {
+  transform: rotateY(42deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s11 {
+  transform: rotateY(46deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s12 {
+  transform: rotateY(50deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s13 {
+  transform: rotateY(54deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s14 {
+  transform: rotateY(58deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s15 {
+  transform: rotateY(62deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s16 {
+  transform: rotateY(66deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s17 {
+  transform: rotateY(70deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s18 {
+  transform: rotateY(74deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s19 {
+  transform: rotateY(78deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s20 {
+  transform: rotateY(82deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s21 {
+  transform: rotateY(86deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s22 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s23 {
+  transform: rotateY(94deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s24 {
+  transform: rotateY(98deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s25 {
+  transform: rotateY(102deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s26 {
+  transform: rotateY(106deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s27 {
+  transform: rotateY(110deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s28 {
+  transform: rotateY(114deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s29 {
+  transform: rotateY(118deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s30 {
+  transform: rotateY(122deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s31 {
+  transform: rotateY(126deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s32 {
+  transform: rotateY(130deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s33 {
+  transform: rotateY(134deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s34 {
+  transform: rotateY(138deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s35 {
+  transform: rotateY(142deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s36 {
+  transform: rotateY(146deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s37 {
+  transform: rotateY(150deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s38 {
+  transform: rotateY(154deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s39 {
+  transform: rotateY(158deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s40 {
+  transform: rotateY(162deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s41 {
+  transform: rotateY(166deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s42 {
+  transform: rotateY(170deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s43 {
+  transform: rotateY(174deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s44 {
+  transform: rotateY(178deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s45 {
+  transform: rotateY(182deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s46 {
+  transform: rotateY(186deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s47 {
+  transform: rotateY(190deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s48 {
+  transform: rotateY(194deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s49 {
+  transform: rotateY(198deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s50 {
+  transform: rotateY(202deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s51 {
+  transform: rotateY(206deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s52 {
+  transform: rotateY(210deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s53 {
+  transform: rotateY(214deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s54 {
+  transform: rotateY(218deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s55 {
+  transform: rotateY(222deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s56 {
+  transform: rotateY(226deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s57 {
+  transform: rotateY(230deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s58 {
+  transform: rotateY(234deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s59 {
+  transform: rotateY(238deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s60 {
+  transform: rotateY(242deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s61 {
+  transform: rotateY(246deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s62 {
+  transform: rotateY(250deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s63 {
+  transform: rotateY(254deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s64 {
+  transform: rotateY(258deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s65 {
+  transform: rotateY(262deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s66 {
+  transform: rotateY(266deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s67 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s68 {
+  transform: rotateY(274deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s69 {
+  transform: rotateY(278deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s70 {
+  transform: rotateY(282deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s71 {
+  transform: rotateY(286deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s72 {
+  transform: rotateY(290deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s73 {
+  transform: rotateY(294deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s74 {
+  transform: rotateY(298deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s75 {
+  transform: rotateY(302deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s76 {
+  transform: rotateY(306deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s77 {
+  transform: rotateY(310deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s78 {
+  transform: rotateY(314deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s79 {
+  transform: rotateY(318deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s80 {
+  transform: rotateY(322deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s81 {
+  transform: rotateY(326deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s82 {
+  transform: rotateY(330deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s83 {
+  transform: rotateY(334deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s84 {
+  transform: rotateY(338deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s85 {
+  transform: rotateY(342deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s86 {
+  transform: rotateY(346deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s87 {
+  transform: rotateY(350deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s88 {
+  transform: rotateY(354deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .s89 {
+  transform: rotateY(358deg) translate3D(-50%, 0, 3.075em);
+}
+.cyl-9 .side {
+  background:url(https://www.conceptrun.de/EBS/textur_schmal_gebuerstet_verlauf.png) #686868;
+}
+/* .cyl-10 styles */
+.cyl-10 {
+  transform:translate3D(3em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(90deg);
+  opacity:1;
+  width:0.5em;
+  height:.3em;
+  margin:-0.15em 0 0 -0.25em;
+}
+.cyl-10 .tp, .cyl-10 .bm {
+  width:0.5em;
+  height:0.5em;
+}
+.cyl-10 .side {
+  width:0.10419222016226815em;
+  height:.3em;
+}
+.cyl-10 .s0 {
+  transform: rotateY(9deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s1 {
+  transform: rotateY(27deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s2 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s3 {
+  transform: rotateY(63deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s4 {
+  transform: rotateY(81deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s5 {
+  transform: rotateY(99deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s6 {
+  transform: rotateY(117deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s7 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s8 {
+  transform: rotateY(153deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s9 {
+  transform: rotateY(171deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s10 {
+  transform: rotateY(189deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s11 {
+  transform: rotateY(207deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s12 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s13 {
+  transform: rotateY(243deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s14 {
+  transform: rotateY(261deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s15 {
+  transform: rotateY(279deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s16 {
+  transform: rotateY(297deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s17 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s18 {
+  transform: rotateY(333deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .s19 {
+  transform: rotateY(351deg) translate3D(-50%, 0, 0.225em);
+}
+.cyl-10 .face, .cyl-10 .side {
+  background:url(https://www.conceptrun.de/EBS/textur_gebuerstet_lq_d.png) #FFFFFF;
+}
+/* .cyl-12 styles */
+.cyl-12 {
+  transform:translate3D(0em, 0em, 0.75em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:5.4em;
+  height:0.1em;
+  margin:-0.05em 0 0 -2.7em;
+}
+.cyl-12 .tp, .cyl-12 .bm {
+  width:5.4em;
+  height:5.4em;
+}
+.cyl-12 .side {
+  width:0.880275977752496em;
+  height:0.1em;
+}
+.cyl-12 .s0 {
+  transform: rotateY(9deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s1 {
+  transform: rotateY(27deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s2 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s3 {
+  transform: rotateY(63deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s4 {
+  transform: rotateY(81deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s5 {
+  transform: rotateY(99deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s6 {
+  transform: rotateY(117deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s7 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s8 {
+  transform: rotateY(153deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s9 {
+  transform: rotateY(171deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s10 {
+  transform: rotateY(189deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s11 {
+  transform: rotateY(207deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s12 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s13 {
+  transform: rotateY(243deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s14 {
+  transform: rotateY(261deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s15 {
+  transform: rotateY(279deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s16 {
+  transform: rotateY(297deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s17 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s18 {
+  transform: rotateY(333deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .s19 {
+  transform: rotateY(351deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-12 .face, .cyl-12 .side {
+  background-color:#FFFFFF;
+}
+.cyl-12 .tp {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+.cyl-12 .bm {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+/* .cyl-13 styles */
+.cyl-13 {
+  transform:translate3D(0em, 0em, 0.70em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:5.4em;
+  height:0.1em;
+  margin:-0.05em 0 0 -2.7em;
+}
+.cyl-13 .tp, .cyl-13 .bm {
+  width:5.4em;
+  height:5.4em;
+}
+.cyl-13 .side {
+  width:0.880275977752496em;
+  height:0.1em;
+}
+.cyl-13 .s0 {
+  transform: rotateY(9deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s1 {
+  transform: rotateY(27deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s2 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s3 {
+  transform: rotateY(63deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s4 {
+  transform: rotateY(81deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s5 {
+  transform: rotateY(99deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s6 {
+  transform: rotateY(117deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s7 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s8 {
+  transform: rotateY(153deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s9 {
+  transform: rotateY(171deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s10 {
+  transform: rotateY(189deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s11 {
+  transform: rotateY(207deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s12 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s13 {
+  transform: rotateY(243deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s14 {
+  transform: rotateY(261deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s15 {
+  transform: rotateY(279deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s16 {
+  transform: rotateY(297deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s17 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s18 {
+  transform: rotateY(333deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .s19 {
+  transform: rotateY(351deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-13 .face, .cyl-13 .side {
+  background-color:#FFFFFF;
+}
+.cyl-13 .tp {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+.cyl-13 .bm {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+/* .cyl-14 styles */
+.cyl-14 {
+  transform:translate3D(0em, 0em, 0.65em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:5.4em;
+  height:0.1em;
+  margin:-0.05em 0 0 -2.7em;
+}
+.cyl-14 .tp, .cyl-14 .bm {
+  width:5.4em;
+  height:5.4em;
+}
+.cyl-14 .side {
+  width:0.880275977752496em;
+  height:0.1em;
+}
+.cyl-14 .s0 {
+  transform: rotateY(9deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s1 {
+  transform: rotateY(27deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s2 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s3 {
+  transform: rotateY(63deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s4 {
+  transform: rotateY(81deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s5 {
+  transform: rotateY(99deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s6 {
+  transform: rotateY(117deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s7 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s8 {
+  transform: rotateY(153deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s9 {
+  transform: rotateY(171deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s10 {
+  transform: rotateY(189deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s11 {
+  transform: rotateY(207deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s12 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s13 {
+  transform: rotateY(243deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s14 {
+  transform: rotateY(261deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s15 {
+  transform: rotateY(279deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s16 {
+  transform: rotateY(297deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s17 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s18 {
+  transform: rotateY(333deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .s19 {
+  transform: rotateY(351deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-14 .face, .cyl-14 .side {
+  background-color:#FFFFFF;
+}
+.cyl-14 .tp {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+.cyl-14 .bm {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+/* .cyl-15 styles */
+.cyl-15 {
+  transform:translate3D(0em, 0em, 0.60em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:5.4em;
+  height:0.1em;
+  margin:-0.05em 0 0 -2.7em;
+}
+.cyl-15 .tp, .cyl-15 .bm {
+  width:5.4em;
+  height:5.4em;
+}
+.cyl-15 .side {
+  width:0.880275977752496em;
+  height:0.1em;
+}
+.cyl-15 .s0 {
+  transform: rotateY(9deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s1 {
+  transform: rotateY(27deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s2 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s3 {
+  transform: rotateY(63deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s4 {
+  transform: rotateY(81deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s5 {
+  transform: rotateY(99deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s6 {
+  transform: rotateY(117deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s7 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s8 {
+  transform: rotateY(153deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s9 {
+  transform: rotateY(171deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s10 {
+  transform: rotateY(189deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s11 {
+  transform: rotateY(207deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s12 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s13 {
+  transform: rotateY(243deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s14 {
+  transform: rotateY(261deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s15 {
+  transform: rotateY(279deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s16 {
+  transform: rotateY(297deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s17 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s18 {
+  transform: rotateY(333deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .s19 {
+  transform: rotateY(351deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-15 .face, .cyl-15 .side {
+  background-color:#FFFFFF;
+}
+.cyl-15 .tp {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+.cyl-15 .bm {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+/* .cyl-16 styles */
+.cyl-16 {
+  transform:translate3D(0em, 0em, 0.55em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:5.4em;
+  height:0.1em;
+  margin:-0.05em 0 0 -2.7em;
+}
+.cyl-16 .tp, .cyl-16 .bm {
+  width:5.4em;
+  height:5.4em;
+}
+.cyl-16 .side {
+  width:0.21357215525543774em;
+  height:0.1em;
+}
+.cyl-16 .s0 {
+  transform: rotateY(2deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s1 {
+  transform: rotateY(6deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s2 {
+  transform: rotateY(10deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s3 {
+  transform: rotateY(14deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s4 {
+  transform: rotateY(18deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s5 {
+  transform: rotateY(22deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s6 {
+  transform: rotateY(26deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s7 {
+  transform: rotateY(30deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s8 {
+  transform: rotateY(34deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s9 {
+  transform: rotateY(38deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s10 {
+  transform: rotateY(42deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s11 {
+  transform: rotateY(46deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s12 {
+  transform: rotateY(50deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s13 {
+  transform: rotateY(54deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s14 {
+  transform: rotateY(58deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s15 {
+  transform: rotateY(62deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s16 {
+  transform: rotateY(66deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s17 {
+  transform: rotateY(70deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s18 {
+  transform: rotateY(74deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s19 {
+  transform: rotateY(78deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s20 {
+  transform: rotateY(82deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s21 {
+  transform: rotateY(86deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s22 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s23 {
+  transform: rotateY(94deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s24 {
+  transform: rotateY(98deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s25 {
+  transform: rotateY(102deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s26 {
+  transform: rotateY(106deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s27 {
+  transform: rotateY(110deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s28 {
+  transform: rotateY(114deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s29 {
+  transform: rotateY(118deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s30 {
+  transform: rotateY(122deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s31 {
+  transform: rotateY(126deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s32 {
+  transform: rotateY(130deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s33 {
+  transform: rotateY(134deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s34 {
+  transform: rotateY(138deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s35 {
+  transform: rotateY(142deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s36 {
+  transform: rotateY(146deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s37 {
+  transform: rotateY(150deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s38 {
+  transform: rotateY(154deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s39 {
+  transform: rotateY(158deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s40 {
+  transform: rotateY(162deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s41 {
+  transform: rotateY(166deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s42 {
+  transform: rotateY(170deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s43 {
+  transform: rotateY(174deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s44 {
+  transform: rotateY(178deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s45 {
+  transform: rotateY(182deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s46 {
+  transform: rotateY(186deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s47 {
+  transform: rotateY(190deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s48 {
+  transform: rotateY(194deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s49 {
+  transform: rotateY(198deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s50 {
+  transform: rotateY(202deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s51 {
+  transform: rotateY(206deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s52 {
+  transform: rotateY(210deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s53 {
+  transform: rotateY(214deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s54 {
+  transform: rotateY(218deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s55 {
+  transform: rotateY(222deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s56 {
+  transform: rotateY(226deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s57 {
+  transform: rotateY(230deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s58 {
+  transform: rotateY(234deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s59 {
+  transform: rotateY(238deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s60 {
+  transform: rotateY(242deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s61 {
+  transform: rotateY(246deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s62 {
+  transform: rotateY(250deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s63 {
+  transform: rotateY(254deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s64 {
+  transform: rotateY(258deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s65 {
+  transform: rotateY(262deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s66 {
+  transform: rotateY(266deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s67 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s68 {
+  transform: rotateY(274deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s69 {
+  transform: rotateY(278deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s70 {
+  transform: rotateY(282deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s71 {
+  transform: rotateY(286deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s72 {
+  transform: rotateY(290deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s73 {
+  transform: rotateY(294deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s74 {
+  transform: rotateY(298deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s75 {
+  transform: rotateY(302deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s76 {
+  transform: rotateY(306deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s77 {
+  transform: rotateY(310deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s78 {
+  transform: rotateY(314deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s79 {
+  transform: rotateY(318deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s80 {
+  transform: rotateY(322deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s81 {
+  transform: rotateY(326deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s82 {
+  transform: rotateY(330deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s83 {
+  transform: rotateY(334deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s84 {
+  transform: rotateY(338deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s85 {
+  transform: rotateY(342deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s86 {
+  transform: rotateY(346deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s87 {
+  transform: rotateY(350deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s88 {
+  transform: rotateY(354deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .s89 {
+  transform: rotateY(358deg) translate3D(-50%, 0, 2.6750000000000003em);
+}
+.cyl-16 .face, .cyl-16 .side {
+  background-color:#FFFFFF;
+}
+.cyl-16 .tp {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+.cyl-16 .bm {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+/* .cyl-17 styles */
+.cyl-17 {
+  transform:translate3D(0em, 0em, 0.50em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:5.5em;
+  height:0.1em;
+  margin:-0.05em 0 0 -2.75em;
+}
+.cyl-17 .tp, .cyl-17 .bm {
+  width:5.5em;
+  height:5.5em;
+}
+.cyl-17 .side {
+  width:0.8961144217849495em;
+  height:0.1em;
+}
+.cyl-17 .s0 {
+  transform: rotateY(9deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s1 {
+  transform: rotateY(27deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s2 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s3 {
+  transform: rotateY(63deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s4 {
+  transform: rotateY(81deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s5 {
+  transform: rotateY(99deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s6 {
+  transform: rotateY(117deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s7 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s8 {
+  transform: rotateY(153deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s9 {
+  transform: rotateY(171deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s10 {
+  transform: rotateY(189deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s11 {
+  transform: rotateY(207deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s12 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s13 {
+  transform: rotateY(243deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s14 {
+  transform: rotateY(261deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s15 {
+  transform: rotateY(279deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s16 {
+  transform: rotateY(297deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s17 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s18 {
+  transform: rotateY(333deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .s19 {
+  transform: rotateY(351deg) translate3D(-50%, 0, 2.725em);
+}
+.cyl-17 .face, .cyl-17 .side {
+  background-color:#FFFFFF;
+}
+.cyl-17 .tp {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+.cyl-17 .bm {
+  background:url(https://www.conceptrun.de/EBS/clickverschluss.png);
+}
+/* .cyl-6 styles */
+.cyl-6 {
+  transform:translate3D(0em, 0em, .7em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:2.3em;
+  height:.1em;
+  margin:-0.05em 0 0 -1.15em;
+}
+.cyl-6 .tp, .cyl-6 .bm {
+  width:2.3em;
+  height:2.3em;
+}
+.cyl-6 .side {
+  width:0.10531776983101979em;
+  height:.1em;
+}
+.cyl-6 .s0 {
+  transform: rotateY(2deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s1 {
+  transform: rotateY(6deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s2 {
+  transform: rotateY(10deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s3 {
+  transform: rotateY(14deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s4 {
+  transform: rotateY(18deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s5 {
+  transform: rotateY(22deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s6 {
+  transform: rotateY(26deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s7 {
+  transform: rotateY(30deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s8 {
+  transform: rotateY(34deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s9 {
+  transform: rotateY(38deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s10 {
+  transform: rotateY(42deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s11 {
+  transform: rotateY(46deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s12 {
+  transform: rotateY(50deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s13 {
+  transform: rotateY(54deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s14 {
+  transform: rotateY(58deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s15 {
+  transform: rotateY(62deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s16 {
+  transform: rotateY(66deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s17 {
+  transform: rotateY(70deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s18 {
+  transform: rotateY(74deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s19 {
+  transform: rotateY(78deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s20 {
+  transform: rotateY(82deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s21 {
+  transform: rotateY(86deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s22 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s23 {
+  transform: rotateY(94deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s24 {
+  transform: rotateY(98deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s25 {
+  transform: rotateY(102deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s26 {
+  transform: rotateY(106deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s27 {
+  transform: rotateY(110deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s28 {
+  transform: rotateY(114deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s29 {
+  transform: rotateY(118deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s30 {
+  transform: rotateY(122deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s31 {
+  transform: rotateY(126deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s32 {
+  transform: rotateY(130deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s33 {
+  transform: rotateY(134deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s34 {
+  transform: rotateY(138deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s35 {
+  transform: rotateY(142deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s36 {
+  transform: rotateY(146deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s37 {
+  transform: rotateY(150deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s38 {
+  transform: rotateY(154deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s39 {
+  transform: rotateY(158deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s40 {
+  transform: rotateY(162deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s41 {
+  transform: rotateY(166deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s42 {
+  transform: rotateY(170deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s43 {
+  transform: rotateY(174deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s44 {
+  transform: rotateY(178deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s45 {
+  transform: rotateY(182deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s46 {
+  transform: rotateY(186deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s47 {
+  transform: rotateY(190deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s48 {
+  transform: rotateY(194deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s49 {
+  transform: rotateY(198deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s50 {
+  transform: rotateY(202deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s51 {
+  transform: rotateY(206deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s52 {
+  transform: rotateY(210deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s53 {
+  transform: rotateY(214deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s54 {
+  transform: rotateY(218deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s55 {
+  transform: rotateY(222deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s56 {
+  transform: rotateY(226deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s57 {
+  transform: rotateY(230deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s58 {
+  transform: rotateY(234deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s59 {
+  transform: rotateY(238deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s60 {
+  transform: rotateY(242deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s61 {
+  transform: rotateY(246deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s62 {
+  transform: rotateY(250deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s63 {
+  transform: rotateY(254deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s64 {
+  transform: rotateY(258deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s65 {
+  transform: rotateY(262deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s66 {
+  transform: rotateY(266deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s67 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s68 {
+  transform: rotateY(274deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s69 {
+  transform: rotateY(278deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s70 {
+  transform: rotateY(282deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s71 {
+  transform: rotateY(286deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s72 {
+  transform: rotateY(290deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s73 {
+  transform: rotateY(294deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s74 {
+  transform: rotateY(298deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s75 {
+  transform: rotateY(302deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s76 {
+  transform: rotateY(306deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s77 {
+  transform: rotateY(310deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s78 {
+  transform: rotateY(314deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s79 {
+  transform: rotateY(318deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s80 {
+  transform: rotateY(322deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s81 {
+  transform: rotateY(326deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s82 {
+  transform: rotateY(330deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s83 {
+  transform: rotateY(334deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s84 {
+  transform: rotateY(338deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s85 {
+  transform: rotateY(342deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s86 {
+  transform: rotateY(346deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s87 {
+  transform: rotateY(350deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s88 {
+  transform: rotateY(354deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .s89 {
+  transform: rotateY(358deg) translate3D(-50%, 0, 1.125em);
+}
+.cyl-6 .face, .cyl-6 .side {
+  background-color:#FFFFFF;
+}
+.cyl-6 .tp {
+  background:url(https://www.conceptrun.de/EBS/lm_dimmbar_innen_l2.png);
+}
+.cyl-6 .bm {
+  background:url(https://www.conceptrun.de/EBS/lm_dimmbar_innen_l2.png);
+}
+/* .cyl-7 styles */
+.cyl-7 {
+  transform:translate3D(-3em, 0.2em, -1.60em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-7 .tp, .cyl-7 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-7 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-7 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-7 .face, .cyl-7 .side {
+  background-color:#FFFFFF;
+}
+.cyl-7 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-7 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-7 .side {
+  background-color:#adadad;
+}
+/* .cyl-11 styles */
+.cyl-11 {
+  transform:translate3D(-3em, 0.4em, -1.61em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-11 .tp, .cyl-11 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-11 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-11 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-11 .face, .cyl-11 .side {
+  background-color:#FFFFFF;
+}
+.cyl-11 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-11 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-11 .side {
+  background-color:#949494;
+}
+/* .cyl-18 styles */
+.cyl-18 {
+  transform:translate3D(-3em, 0.6em, -1.611em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-18 .tp, .cyl-18 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-18 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-18 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-18 .face, .cyl-18 .side {
+  background-color:#FFFFFF;
+}
+.cyl-18 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-18 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-18 .side {
+  background-color:#949494;
+}
+/* .cyl-19 styles */
+.cyl-19 {
+  transform:translate3D(-3em, -0.2em, -1.61em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-19 .tp, .cyl-19 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-19 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-19 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-19 .face, .cyl-19 .side {
+  background-color:#FFFFFF;
+}
+.cyl-19 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-19 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-19 .side {
+  background-color:#adadad;
+}
+/* .cyl-20 styles */
+.cyl-20 {
+  transform:translate3D(-3em, -0.4em, -1.611em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-20 .tp, .cyl-20 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-20 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-20 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-20 .face, .cyl-20 .side {
+  background-color:#FFFFFF;
+}
+.cyl-20 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-20 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-20 .side {
+  background-color:#adadad;
+}
+/* .cyl-21 styles */
+.cyl-21 {
+  transform:translate3D(-3em, -0.6em, -1.6111em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-21 .tp, .cyl-21 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-21 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-21 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-21 .face, .cyl-21 .side {
+  background-color:#FFFFFF;
+}
+.cyl-21 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-21 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-21 .side {
+  background-color:#949494;
+}
+/* .cyl-23 styles */
+.cyl-23 {
+  transform:translate3D(3em, 0.2em, -1.611em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-23 .tp, .cyl-23 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-23 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-23 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-23 .face, .cyl-23 .side {
+  background-color:#FFFFFF;
+}
+.cyl-23 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-23 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-23 .side {
+  background-color:#adadad;
+}
+/* .cyl-24 styles */
+.cyl-24 {
+  transform:translate3D(3em, 0.4em, -1.6111em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-24 .tp, .cyl-24 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-24 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-24 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-24 .face, .cyl-24 .side {
+  background-color:#FFFFFF;
+}
+.cyl-24 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-24 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-24 .side {
+  background-color:#adadad;
+}
+/* .cyl-25 styles */
+.cyl-25 {
+  transform:translate3D(3em, 0.6em, -1.6111em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-25 .tp, .cyl-25 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-25 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-25 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-25 .face, .cyl-25 .side {
+  background-color:#FFFFFF;
+}
+.cyl-25 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-25 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-25 .side {
+  background-color:#adadad;
+}
+/* .cyl-26 styles */
+.cyl-26 {
+  transform:translate3D(3em, 0em, -1.6111em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-26 .tp, .cyl-26 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-26 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-26 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-26 .face, .cyl-26 .side {
+  background-color:#FFFFFF;
+}
+.cyl-26 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-26 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-26 .side {
+  background-color:#adadad;
+}
+/* .cyl-27 styles */
+.cyl-27 {
+  transform:translate3D(3em, -0.2em, -1.61111em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-27 .tp, .cyl-27 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-27 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-27 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-27 .face, .cyl-27 .side {
+  background-color:#FFFFFF;
+}
+.cyl-27 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-27 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-27 .side {
+  background-color:#adadad;
+}
+/* .cyl-28 styles */
+.cyl-28 {
+  transform:translate3D(3em, -0.4em, -1.611111em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-28 .tp, .cyl-28 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-28 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-28 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-28 .face, .cyl-28 .side {
+  background-color:#FFFFFF;
+}
+.cyl-28 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-28 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-28 .side {
+  background-color:#adadad;
+}
+/* .cyl-29 styles */
+.cyl-29 {
+  transform:translate3D(3em, -0.6em, -1.6111111em) rotateX(90deg) rotateY(100deg) rotateZ(90deg);
+  opacity:1;
+  width:0.7em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.35em;
+}
+.cyl-29 .tp, .cyl-29 .bm {
+  width:0.7em;
+  height:0.7em;
+}
+.cyl-29 .side {
+  width:0.18477043207310495em;
+  height:0.1em;
+}
+.cyl-29 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.32499999999999996em);
+}
+.cyl-29 .face, .cyl-29 .side {
+  background-color:#FFFFFF;
+}
+.cyl-29 .tp {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-29 .bm {
+  background:url(https://www.conceptrun.de/EBS/transparent.png);
+}
+.cyl-29 .side {
+  background-color:#adadad;
+}
+/* .cyl-22 styles */
+.cyl-22 {
+  transform:translate3D(-3.01em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(90deg);
+  opacity:1;
+  width:0.2em;
+  height:.3em;
+  margin:-0.15em 0 0 -0.1em;
+}
+.cyl-22 .tp, .cyl-22 .bm {
+  width:0.2em;
+  height:0.2em;
+}
+.cyl-22 .side {
+  width:0.056676888064907255em;
+  height:.3em;
+}
+.cyl-22 .s0 {
+  transform: rotateY(9deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s1 {
+  transform: rotateY(27deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s2 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s3 {
+  transform: rotateY(63deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s4 {
+  transform: rotateY(81deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s5 {
+  transform: rotateY(99deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s6 {
+  transform: rotateY(117deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s7 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s8 {
+  transform: rotateY(153deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s9 {
+  transform: rotateY(171deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s10 {
+  transform: rotateY(189deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s11 {
+  transform: rotateY(207deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s12 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s13 {
+  transform: rotateY(243deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s14 {
+  transform: rotateY(261deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s15 {
+  transform: rotateY(279deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s16 {
+  transform: rotateY(297deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s17 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s18 {
+  transform: rotateY(333deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .s19 {
+  transform: rotateY(351deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-22 .face, .cyl-22 .side {
+  background-color:#525252;
+}
+/* .cyl-30 styles */
+.cyl-30 {
+  transform:translate3D(3.08em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(90deg);
+  opacity:1;
+  width:0.2em;
+  height:.3em;
+  margin:-0.15em 0 0 -0.1em;
+}
+.cyl-30 .tp, .cyl-30 .bm {
+  width:0.2em;
+  height:0.2em;
+}
+.cyl-30 .side {
+  width:0.056676888064907255em;
+  height:.3em;
+}
+.cyl-30 .s0 {
+  transform: rotateY(9deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s1 {
+  transform: rotateY(27deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s2 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s3 {
+  transform: rotateY(63deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s4 {
+  transform: rotateY(81deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s5 {
+  transform: rotateY(99deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s6 {
+  transform: rotateY(117deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s7 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s8 {
+  transform: rotateY(153deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s9 {
+  transform: rotateY(171deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s10 {
+  transform: rotateY(189deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s11 {
+  transform: rotateY(207deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s12 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s13 {
+  transform: rotateY(243deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s14 {
+  transform: rotateY(261deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s15 {
+  transform: rotateY(279deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s16 {
+  transform: rotateY(297deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s17 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s18 {
+  transform: rotateY(333deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .s19 {
+  transform: rotateY(351deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cyl-30 .face, .cyl-30 .side {
+  background-color:#525252;
+}
+/* .cub-2 styles */
+.cub-2 {
+  transform:translate3D(-4.05em, 0.25em, -0.35em) rotateX(200deg) rotateY(46deg) rotateZ(100deg);
+  opacity:1;
+  width:0.1em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.05em;
+}
+.cub-2 .ft {
+  transform:translateZ(1.75em);
+}
+.cub-2 .bk {
+  transform:translateZ(-1.75em) rotateY(180deg);
+}
+.cub-2 .rt, .cub-2 .lt {
+  width:3.5em;
+  height:0.1em;
+}
+.cub-2 .tp, .cub-2 .bm {
+  width:0.1em;
+  height:3.5em;
+}
+.cub-2 .face {
+  background-color:#949494;
+}
+.cub-2 .ft {
+  width:0em;
+  margin-left:0.05em;
+}
+.cub-2 .bk {
+  width:0em;
+  margin-left:-0.05em;
+}
+.cub-2 .rt, .cub-2 .lt {
+  width:3.4em;
+}
+.cub-2 .tp, .cub-2 .bm, .cub-2 .tp .photon-shader, .cub-2 .bm .photon-shader {
+  border-radius:0.05em;
+}
+.cub-2 .cr {
+  width:0.05em;
+  left:0.025em;
+}
+.cub-2 .cr-0 {
+  transform: translate3D(0em, 0, 1.7em);
+}
+.cub-2 .cr-1 {
+  transform: translate3D(0em, 0, -1.7em);
+}
+.cub-2 .cr-2 {
+  transform: translate3D(0, 0, -1.7em);
+}
+.cub-2 .cr-3 {
+  transform: translate3D(0, 0, 1.7em);
+}
+.cub-2 .cr-0 .s0 {
+  transform: rotateY(15deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .cr-0 .s1 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .cr-0 .s2 {
+  transform: rotateY(75deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .cr-1 .s0 {
+  transform: rotateY(105deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .cr-1 .s1 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .cr-1 .s2 {
+  transform: rotateY(165deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .cr-2 .s0 {
+  transform: rotateY(195deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .cr-2 .s1 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .cr-2 .s2 {
+  transform: rotateY(255deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .cr-3 .s0 {
+  transform: rotateY(285deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .cr-3 .s1 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .cr-3 .s2 {
+  transform: rotateY(345deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-2 .side {
+  width:0.051794919243112275em;
+}
+/* .cub-3 styles */
+.cub-3 {
+  transform:translate3D(-4.05em, -0.90em, -0.35em) rotateX(200deg) rotateY(46deg) rotateZ(100deg);
+  opacity:1;
+  width:0.1em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.05em;
+}
+.cub-3 .ft {
+  transform:translateZ(1.75em);
+}
+.cub-3 .bk {
+  transform:translateZ(-1.75em) rotateY(180deg);
+}
+.cub-3 .rt, .cub-3 .lt {
+  width:3.5em;
+  height:0.1em;
+}
+.cub-3 .tp, .cub-3 .bm {
+  width:0.1em;
+  height:3.5em;
+}
+.cub-3 .face {
+  background-color:#949494;
+}
+.cub-3 .ft {
+  width:0em;
+  margin-left:0.05em;
+}
+.cub-3 .bk {
+  width:0em;
+  margin-left:-0.05em;
+}
+.cub-3 .rt, .cub-3 .lt {
+  width:3.4em;
+}
+.cub-3 .tp, .cub-3 .bm, .cub-3 .tp .photon-shader, .cub-3 .bm .photon-shader {
+  border-radius:0.05em;
+}
+.cub-3 .cr {
+  width:0.05em;
+  left:0.025em;
+}
+.cub-3 .cr-0 {
+  transform: translate3D(0em, 0, 1.7em);
+}
+.cub-3 .cr-1 {
+  transform: translate3D(0em, 0, -1.7em);
+}
+.cub-3 .cr-2 {
+  transform: translate3D(0, 0, -1.7em);
+}
+.cub-3 .cr-3 {
+  transform: translate3D(0, 0, 1.7em);
+}
+.cub-3 .cr-0 .s0 {
+  transform: rotateY(15deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .cr-0 .s1 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .cr-0 .s2 {
+  transform: rotateY(75deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .cr-1 .s0 {
+  transform: rotateY(105deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .cr-1 .s1 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .cr-1 .s2 {
+  transform: rotateY(165deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .cr-2 .s0 {
+  transform: rotateY(195deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .cr-2 .s1 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .cr-2 .s2 {
+  transform: rotateY(255deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .cr-3 .s0 {
+  transform: rotateY(285deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .cr-3 .s1 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .cr-3 .s2 {
+  transform: rotateY(345deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-3 .side {
+  width:0.051794919243112275em;
+}
+/* .cub-4 styles */
+.cub-4 {
+  transform:translate3D(0em, -0.5em, -2.5em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:0.35em;
+  height:2em;
+  margin:-1em 0 0 -0.175em;
+}
+.cub-4 .ft {
+  transform:translateZ(0.1em);
+}
+.cub-4 .bk {
+  transform:translateZ(-0.1em) rotateY(180deg);
+}
+.cub-4 .rt, .cub-4 .lt {
+  width:0.2em;
+  height:2em;
+}
+.cub-4 .tp, .cub-4 .bm {
+  width:0.35em;
+  height:0.2em;
+}
+.cub-4 .face {
+  background-color:#525252;
+}
+.cub-4 .ft {
+  background-color:#525252;
+}
+.cub-4 .bk {
+  background-color:#525252;
+}
+.cub-4 .tp {
+  background-color:#000;
+}
+.cub-4 .bm {
+  background-color:#525252;
+}
+.cub-4 .lt {
+  background-color:#525252;
+}
+.cub-4 .rt {
+  background-color:#525252;
+}
+.cub-4 .ft {
+  width:0.14999999999999997em;
+  margin-left:0.1em;
+}
+.cub-4 .bk {
+  width:0.14999999999999997em;
+  margin-left:-0.1em;
+}
+.cub-4 .rt, .cub-4 .lt {
+  width:0em;
+}
+.cub-4 .tp, .cub-4 .bm, .cub-4 .tp .photon-shader, .cub-4 .bm .photon-shader {
+  border-radius:0.1em;
+}
+.cub-4 .cr {
+  width:0.1em;
+  left:0.05em;
+}
+.cub-4 .cr-0 {
+  transform: translate3D(0.14999999999999997em, 0, 0em);
+}
+.cub-4 .cr-1 {
+  transform: translate3D(0.14999999999999997em, 0, 0em);
+}
+.cub-4 .cr-2 {
+  transform: translate3D(0, 0, 0em);
+}
+.cub-4 .cr-3 {
+  transform: translate3D(0, 0, 0em);
+}
+.cub-4 .cr-0 .s0 {
+  transform: rotateY(15deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .cr-0 .s1 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .cr-0 .s2 {
+  transform: rotateY(75deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .cr-1 .s0 {
+  transform: rotateY(105deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .cr-1 .s1 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .cr-1 .s2 {
+  transform: rotateY(165deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .cr-2 .s0 {
+  transform: rotateY(195deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .cr-2 .s1 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .cr-2 .s2 {
+  transform: rotateY(255deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .cr-3 .s0 {
+  transform: rotateY(285deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .cr-3 .s1 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .cr-3 .s2 {
+  transform: rotateY(345deg) translate3D(-50%, 0, 0.07500000000000001em);
+}
+.cub-4 .side {
+  width:0.07858983848622454em;
+}
+/* .cyl-4 styles */
+.cyl-4 {
+  transform:translate3D(0.06em, -0.57em, -2.9em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:0.15em;
+  height:3em;
+  margin:-1.5em 0 0 -0.075em;
+}
+.cyl-4 .tp, .cyl-4 .bm {
+  width:0.15em;
+  height:0.15em;
+}
+.cyl-4 .side {
+  width:0.059236521158522494em;
+  height:3em;
+}
+.cyl-4 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-4 .face, .cyl-4 .side {
+  background-color:#9f5b5b;
+}
+.cyl-4 .tp {
+  background-color:#bcb8b8;
+}
+/* .cyl-31 styles */
+.cyl-31 {
+  transform:translate3D(-0.07em, -0.571em, -2.91em) rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:0.15em;
+  height:3em;
+  margin:-1.5em 0 0 -0.075em;
+}
+.cyl-31 .tp, .cyl-31 .bm {
+  width:0.15em;
+  height:0.15em;
+}
+.cyl-31 .side {
+  width:0.059236521158522494em;
+  height:3em;
+}
+.cyl-31 .s0 {
+  transform: rotateY(12.857142857142858deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s1 {
+  transform: rotateY(38.57142857142857deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s2 {
+  transform: rotateY(64.28571428571429deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s3 {
+  transform: rotateY(90deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s4 {
+  transform: rotateY(115.71428571428572deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s5 {
+  transform: rotateY(141.42857142857144deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s6 {
+  transform: rotateY(167.14285714285714deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s7 {
+  transform: rotateY(192.85714285714286deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s8 {
+  transform: rotateY(218.57142857142858deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s9 {
+  transform: rotateY(244.2857142857143deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s10 {
+  transform: rotateY(270deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s11 {
+  transform: rotateY(295.7142857142857deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s12 {
+  transform: rotateY(321.4285714285714deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .s13 {
+  transform: rotateY(347.1428571428571deg) translate3D(-50%, 0, 0.049999999999999996em);
+}
+.cyl-31 .face, .cyl-31 .side {
+  background-color:#578ac1;
+}
+.cyl-31 .tp {
+  background-color:#b8b8bc;
+}
+/* .cub-5 styles */
+.cub-5 {
+  transform:translate3D(0em, -5em, -10em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:60em;
+  height:1em;
+  margin:-0.5em 0 0 -30em;
+}
+.cub-5 .ft {
+  transform:translateZ(20em);
+}
+.cub-5 .bk {
+  transform:translateZ(-20em) rotateY(180deg);
+}
+.cub-5 .rt, .cub-5 .lt {
+  width:40em;
+  height:1em;
+}
+.cub-5 .tp, .cub-5 .bm {
+  width:60em;
+  height:40em;
+}
+.cub-5 .face {
+  background:url(https://www.conceptrun.de/EBS/tisch.jpg) #FFFFFF;
+}
+/* .cub-6 styles */
+.cub-6 {
+  transform:translate3D(4.05em, -0.4em, -0.4em) rotateX(165deg) rotateY(135deg) rotateZ(71deg);
+  opacity:1;
+  width:0.1em;
+  height:0.1em;
+  margin:-0.05em 0 0 -0.05em;
+}
+.cub-6 .ft {
+  transform:translateZ(1.75em);
+}
+.cub-6 .bk {
+  transform:translateZ(-1.75em) rotateY(180deg);
+}
+.cub-6 .rt, .cub-6 .lt {
+  width:3.5em;
+  height:0.1em;
+}
+.cub-6 .tp, .cub-6 .bm {
+  width:0.1em;
+  height:3.5em;
+}
+.cub-6 .face {
+  background-color:#949494;
+}
+.cub-6 .ft {
+  width:0em;
+  margin-left:0.05em;
+}
+.cub-6 .bk {
+  width:0em;
+  margin-left:-0.05em;
+}
+.cub-6 .rt, .cub-6 .lt {
+  width:3.4em;
+}
+.cub-6 .tp, .cub-6 .bm, .cub-6 .tp .photon-shader, .cub-6 .bm .photon-shader {
+  border-radius:0.05em;
+}
+.cub-6 .cr {
+  width:0.05em;
+  left:0.025em;
+}
+.cub-6 .cr-0 {
+  transform: translate3D(0em, 0, 1.7em);
+}
+.cub-6 .cr-1 {
+  transform: translate3D(0em, 0, -1.7em);
+}
+.cub-6 .cr-2 {
+  transform: translate3D(0, 0, -1.7em);
+}
+.cub-6 .cr-3 {
+  transform: translate3D(0, 0, 1.7em);
+}
+.cub-6 .cr-0 .s0 {
+  transform: rotateY(15deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .cr-0 .s1 {
+  transform: rotateY(45deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .cr-0 .s2 {
+  transform: rotateY(75deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .cr-1 .s0 {
+  transform: rotateY(105deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .cr-1 .s1 {
+  transform: rotateY(135deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .cr-1 .s2 {
+  transform: rotateY(165deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .cr-2 .s0 {
+  transform: rotateY(195deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .cr-2 .s1 {
+  transform: rotateY(225deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .cr-2 .s2 {
+  transform: rotateY(255deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .cr-3 .s0 {
+  transform: rotateY(285deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .cr-3 .s1 {
+  transform: rotateY(315deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .cr-3 .s2 {
+  transform: rotateY(345deg) translate3D(-50%, 0, 0.025em);
+}
+.cub-6 .side {
+  width:0.051794919243112275em;
+}
